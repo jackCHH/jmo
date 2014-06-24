@@ -1,0 +1,27 @@
+<h1>Listing voices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Opinion</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @voices.each do |voice| %>
+      <tr>
+        <td><%= voice.opinion %></td>
+        <td><%= link_to 'Show', voice %></td>
+        <td><%= link_to 'Edit', edit_voice_path(voice) %></td>
+        <td><%= link_to 'Destroy', voice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Voice', new_voice_path %>

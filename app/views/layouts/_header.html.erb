@@ -1,0 +1,11 @@
+<ul class = "nav nav-tabs">
+	<li id = "nav-list"><%= link_to "Home", root_path %></li>
+	<li id = "nav-list"><%= link_to "About", about_path %></li>
+	<% if user_signed_in? %>
+		<li id = "nav-list" class = "pull-right"><%= link_to "Logout",  destroy_user_session_path, method: :delete %></li>
+		<li id = "nav-list" class = "pull-right"><%= link_to "Edit",  edit_user_registration_path%></li>
+	<% else %>
+		<li id = "nav-list" class = "pull-right"><%= link_to "Log In" , new_user_session_path %></li>
+		<li id = "nav-list" class = "pull-right"><%= link_to "Sign Up" , new_user_registration_path%></li>
+	<%end%>
+</ul>
