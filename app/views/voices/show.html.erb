@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Opinion:</strong>
-  <%= @voice.opinion %>
-</p>
+<div class = "well">
+	<p>
+	  <strong>Opinion:</strong>
+	  <%= @voice.opinion %>
+	</p>
+	<%= link_to 'Edit', edit_voice_path(@voice) %> |
+	<%= link_to 'Back', voices_path %>
+</div>
 
-<%= link_to 'Edit', edit_voice_path(@voice) %> |
-<%= link_to 'Back', voices_path %>
+

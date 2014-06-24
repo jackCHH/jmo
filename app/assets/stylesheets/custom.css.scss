@@ -1,9 +1,41 @@
 @import "bootstrap";
+
+.alert{
+	font-size: 1.2em;
+	font-weight: bolder;
+	background-color: #fff8c4;
+	color: black;
+}
+
+#opinion{
+	text-align: left;
+}
+
+#home-p{
+	text-align: justify;
+}
+
+.home{
+	color:  #2f4f4f;
+	font-weight: bolder;
+}
+
+.crud{
+	font-size: 0.8em;
+	margin: 5px;
+	font-weight: bolder;
+}
+
 html{
 	margin-top: 30px;
+
 }
 #nav-list{
 	font-size: 1.75em;
+}
+
+.opinion-list{
+	font-size: 1.3em;
 }
 
 h1{
