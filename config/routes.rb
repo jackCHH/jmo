@@ -2,7 +2,7 @@ Jmo::Application.routes.draw do
   resources :voices
 
   devise_for :users
-  root "pages#home"
+  root "voices#index"
   get "about" => "pages#about"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
