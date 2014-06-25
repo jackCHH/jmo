@@ -1,4 +1,6 @@
 class VoicesController < ApplicationController
+  #before user can do anything to voices, must sign in, except seeing the voices (index page)
+  before_filter :authenticate_user!, except: [:index]
   before_action :set_voice, only: [:show, :edit, :update, :destroy]
 
   # GET /voices
@@ -14,17 +16,20 @@ class VoicesController < ApplicationController
 
   # GET /voices/new
   def new
-    @voice = Voice.new
+    #associate new voices with users
+    @voice = current_user.voices.new
   end
 
   # GET /voices/1/edit
   def edit
+    # makes sure no other user can mess with other uses voices
+    @voice = current_user.voices.find(params[:id])
   end
 
   # POST /voices
   # POST /voices.json
   def create
-    @voice = Voice.new(voice_params)
+    @voice = current_user.voices.new(voice_params)
 
     respond_to do |format|
       if @voice.save
@@ -40,6 +45,9 @@ class VoicesController < ApplicationController
   # PATCH/PUT /voices/1
   # PATCH/PUT /voices/1.json
   def update
+    #only user with the right ID can update
+    @voice = current_user.voices.find(params[:id])
+
     respond_to do |format|
       if @voice.update(voice_params)
         format.html { redirect_to @voice, notice: 'Voice was successfully updated.' }
@@ -54,6 +62,8 @@ class VoicesController < ApplicationController
   # DELETE /voices/1
   # DELETE /voices/1.json
   def destroy
+    #only users with the right ids can destroy
+    @voice = current_user.voices.find(params[:id])
     @voice.destroy
     respond_to do |format|
       format.html { redirect_to voices_url }

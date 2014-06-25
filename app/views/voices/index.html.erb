@@ -1,14 +1,7 @@
 <%= link_to 'New Voice', new_voice_path, class: "btn btn-danger btn-lg" %>
 <table>
   <tbody>
-    <% @voices.each do |voice| %>
-        <tr class = "opinion-list">
-          <td id = "opinion"><%= voice.opinion %></td>
-          <td><%= link_to 'Show', voice, class: "crud" %></td>
-          <td><%= link_to 'Edit', edit_voice_path(voice), class: "crud" %></td>
-          <td><%= link_to 'Destroy', voice, method: :delete, data: { confirm: 'Are you sure?' }, class: "crud" %></td>
-        </tr>
-    <% end %>
+    	<%= render @voices %>
   </tbody>
 </table>
 

@@ -1,0 +1,10 @@
+<tr class = "opinion-list">
+  	<td id = "opinion"><%= voice.opinion %></td>
+  	<div class = "crudlist">
+	  	<td><%= link_to 'Show', voice, class: "crud" %></td>
+	  	<%if current_user == voice.user %>
+		  <td><%= link_to 'Edit', edit_voice_path(voice), class: "crud" %></td>
+		  <td><%= link_to 'Destroy', voice, method: :delete, data: { confirm: 'Are you sure?' }, class: "crud" %></td>
+		<%end %>
+	</div>
+</tr>

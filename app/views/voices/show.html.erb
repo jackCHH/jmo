@@ -5,7 +5,9 @@
 	  <strong>Opinion:</strong>
 	  <%= @voice.opinion %>
 	</p>
-	<%= link_to 'Edit', edit_voice_path(@voice) %> |
+	<% if current_user == @voice.user %>
+		<%= link_to 'Edit', edit_voice_path(@voice) %> |
+	<%end%>
 	<%= link_to 'Back', voices_path %>
 </div>
 
