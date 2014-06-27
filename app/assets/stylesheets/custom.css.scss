@@ -1,4 +1,26 @@
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,700);
+
+
+body{   
+  background-image: image-url('back.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container{
+	background-color: rgba(255,255,255,0.7);
+}
+
+
+html body a{
+	font-family: "Titillium Web", sans-serif;
+}
+
+.logo{
+	font-weight: 700; 
+}
 
 .alert{
 	font-size: 1.2em;
@@ -22,7 +44,9 @@
 
 .home{
 	color:  #2f4f4f;
+	font-size: 2.5em;
 	font-weight: bolder;
+
 }
 
 .crud{
@@ -31,18 +55,12 @@
 	font-weight: bolder;
 }
 
-
-html{
-	margin-top: 30px;
-
-}
-
 #nav-list, #new{
 	font-size: 1.6em;
 }
 
 #new a{
-	color: #cc0033;
+	color: #8a2be2;
 }
 
 .opinion-list{
@@ -56,7 +74,7 @@ h1{
 p{
 	font-size: 20px;
 	a{
-		color: #cc0033;
+		color: #800020;
 		font-weight: bold;
 	}
 }
@@ -67,15 +85,48 @@ p{
 	margin-bottom: 25px;
 }
 
+#current{
+	color: #0099cc;
+	text-align: left;
+	font-size: 2.3em;
+	padding-bottom: 25px;
+	border-bottom: solid 3px;
+}
+
 .text-center{
 	margin: 60px 0px;
 }
  
 a {
-	color: #00cc99;
+	color: #cc0033;
 }
 
 .form-actions
 {
 	margin-bottom: 40px;
+}
+
+/* FOOTER */
+*{
+	margin: 0;
+}
+
+html, body{
+	height: 100%;
+}
+
+.wrapper{
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}
+
+.footer, .push{
+	height: 4em;
+}
+
+small{
+	font-size: 12px;
+	font-weight: bold;
 }
