@@ -6,7 +6,7 @@ class VoicesController < ApplicationController
   # GET /voices
   # GET /voices.json
   def index
-    @voices = Voice.all
+    @voices = Voice.order("created_at desc")
   end
 
   # GET /voices/1
