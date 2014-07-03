@@ -4,6 +4,8 @@
 	<p>
 	  <strong>Opinion:</strong>
 	  <%= @voice.opinion %>
+	  </br>
+	  <div class = "timestamp">Created on <%= @voice.created_at.strftime("%b. %d, %Y")%> at <%= @voice.created_at.strftime("%H:%M")%> </div>
 	</p>
 	<% if current_user == @voice.user %>
 		<%= link_to 'Edit', edit_voice_path(@voice) %> |
